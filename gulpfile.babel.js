@@ -5,6 +5,9 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
 
+var ghPages = require('gulp-gh-pages');
+
+
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
@@ -86,6 +89,7 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
+    'CNAME',
     '!app/*.html'
   ], {
     dot: true
